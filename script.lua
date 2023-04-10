@@ -265,7 +265,9 @@ spawn(function()
 					task.wait(0.2)
 					print("No Comets Found Hopping")
 					print("Comets Broke "..CometsBroke)
-					writefile("MiniComets.txt", "")
+					if readfile("MiniComet.txt") == game.JobId then
+							writefile("MiniComet.txt", "")
+					else end
 					if CometsBroke ~= 0 and not said then
 						if getgenv().CurrentGems then
 							if ReadSettings("Send Discord Notification") or getgenv().CometNotify then
